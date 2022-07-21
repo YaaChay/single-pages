@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speech</title>
+</head>
+
+<body>
+    <h1>Text to Speech</h1>
+    <input type="text" id="text"><br>
+    <button onclick="speechText()">Speech</button>
+    
+    <script type="text/javascript">
+        var text = document.getElementById("text");
+        var speech = new SpeechSynthesisUtterance();
+        function speechText() {
+            speech.text = text.value;
+            speech.rate = 1;
+            speech.volume = 1;
+            speech.pitch = 1;
+            speech.lang = "en-US";
+            speechSynthesis.speak(speech);
+        }
+    </script>
+</body>
+
+</html>
