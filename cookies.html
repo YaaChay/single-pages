@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cookies</title>
+    </head>
+    
+    <body>
+        <h1 id="header">Cookies</h1>
+        <button onclick="changeColor();">Click Me</button>
+        <script type="text/javascript">
+            function changeColor() {
+                if (getCookies("darkmode") == false || !getCookies("darkmode")) {
+                    setCookies("darkmode", true, 30);
+                    setCookies("lightmode", true, 30);
+                    document.querySelector("#header").style.color = "#ff00ff";
+                    window.addEventListener("load", setMode);
+                } else {
+                    document. cookie = "darkmode=; expires=Sat, 27 Oct 2001 00:00:00 UTC; path=/;";
+                    document. cookie = "lightmode=; expires=Sat, 27 Oct 2001 00:00:00 UTC; path=/;";
+                    document.querySelector("#header").style.color = "#ff0000";
+                    window.addEventListener("load", setMode);
+            }
+        }
+        function setCookies(cName, cValue, expDays) {
+            var date = new Date();
+            date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
+            document.cookie = cName + "=" + cValue + "; expires=" + date.toUTCString() + "; path=/";
+            console.log("setCookies");
+        }
+        function getCookies(cName) {
+            var name = cName + "=";
+            var cDecode = decodeURIComponent(document.cookie);
+            var cArr = cDecode.split("; ");
+            var value;
+            cArr.forEach(val => {
+                if (val.indexOf(name) === 0) {
+                    value = val.substring(name.length);
+                }
+            })
+            console.log("getCookies");
+            return value;
+        }
+        function setMode() {
+            if (getCookies("darkmode")) {
+                document.querySelector("#header").style.color = "#ff00ff";
+                console.log("Color changed")
+            }else{
+                document.querySelector("#header").style.color = "#ff0000";
+                console.log("Color rechanged")
+            }
+        }
+        window.addEventListener("load", setMode);
+    </script>
+</body>
+
+</html>
