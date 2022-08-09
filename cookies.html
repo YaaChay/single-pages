@@ -12,6 +12,7 @@
         <h1 id="header">Cookies</h1>
         <button onclick="changeColor();">Click Me</button>
         <script type="text/javascript">
+            window.addEventListener("load", setMode());
             function changeColor() {
                 if (getCookies("darkmode") == false || !getCookies("darkmode")) {
                     setCookies("darkmode", true, 30);
@@ -53,7 +54,6 @@
                 console.log("Color rechanged")
             }
         }
-        window.addEventListener("load", setMode);
     </script>
 </body>
 
