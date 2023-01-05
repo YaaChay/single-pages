@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sessionStorage</title>
+    <style>
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body onload="onWindowLoad();">
+    <a href="" onclick="saveSession(1);" id="a1">all</a>
+    <a href="" onclick="saveSession(2)" id="a2">all</a>
+    <a href="" onclick="saveSession(3)" id="a3">all</a>
+    <a href="" onclick="saveSession(4)" id="a4">all</a>
+    <a href="" onclick="saveSession(5)" id="a5">all</a>
+    <script type="text/javascript">
+        var a1 = document.getElementById("a1");
+        var a2 = document.getElementById("a2");
+        var a3 = document.getElementById("a3");
+        var a4 = document.getElementById("a4");
+        var a5 = document.getElementById("a5");
+        a5.classList.add("bold")
+        function saveSession(num){
+            sessionStorage.setItem("tab", num);
+        }
+
+        function getSession(){
+            var result = sessionStorage.getItem("tab");
+            return result;
+        }
+        var tab = getSession();
+    </script>
+</body>
+</html>

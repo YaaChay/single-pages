@@ -1,0 +1,47 @@
+h1 {
+  color: black;
+}
+
+div .subtitle {
+  color: yellow;
+}
+
+div .subtitle1 {
+  color: pink;
+}
+
+div .subtitle2 {
+  color: red;
+}
+
+div .subtitle3 {
+  color: blue;
+}
+
+.subtitle {
+  color: lime;
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: lowercase;
+  text-overflow: hidden;
+}
+
+.h1, .p1, .p3 {
+  color: green;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.p2::after {
+  content: attr(data-text);
+  color: orange;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.p3 {
+  font-size: 18px;
+}
+/*# sourceMappingURL=test.css.map */

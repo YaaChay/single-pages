@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Languages</title>
+</head>
+
+<body>
+    <select id="dropdown">
+        <option>English</option>
+        <option>Myanmar</option>
+        <option>Chinese</option>
+    </select>
+
+    <h1 id="title"></h1>
+    <p id="description"></p>
+    <script type="text/javascript">
+        var dropdown = document.getElementById("dropdown");
+        var title = document.getElementById("title");
+        var description = document.getElementById("description");
+
+        window.onload = () => {
+            setData();
+        }
+        dropdown.onchange = () => {
+            var value = dropdown.value.toLowerCase();
+            setData(value);
+        }
+        async function setData(lang = "english") {
+            var file = await fetch("languages.json");
+            var data = await file.text();
+            var jsonData = await JSON.parse(data);
+            if(lang == "english"){
+                title.innerHTML = jsonData.english.title;
+                description.innerHTML = jsonData.english.description;
+            } else if(lang == "myanmar"){
+                title.innerHTML = jsonData.myanmar.title;
+                description.innerHTML = jsonData.myanmar.description;
+            } else if(lang == "chinese"){
+                title.innerHTML = jsonData.chinese.title;
+                description.innerHTML = jsonData.chinese.description;
+            } else {
+                console.error(`We didn't support ${lang} language.`);
+            }
+        }
+    </script>
+</body>
+
+</html>

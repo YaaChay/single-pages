@@ -1,0 +1,30 @@
+h1 {
+  color: black;
+}
+
+div .subtitle {
+  color: yellow;
+}
+
+div .subtitle1 {
+  color: pink;
+}
+
+div .subtitle2 {
+  color: red;
+}
+
+div .subtitle3 {
+  color: blue;
+}
+
+.subtitle {
+  color: lime;
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: lowercase;
+  text-overflow: hidden;
+}
+/*# sourceMappingURL=test1.css.map */

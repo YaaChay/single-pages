@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="test.css">
+</head>
+
+<body>
+
+    <h1 class="h1">The object element</h1>
+    <div>
+        <h3 class="subtitle">subtitle</h3>
+        <h3 class="subtitle1">subtitle</h3>
+        <h3 class="subtitle2">subtitle</h3>
+        <h3 class="subtitle3">String Function</h3>
+        quote(Hello World);//"Hello World"<br>
+        str-index("Hello World","H");//1<br>
+        str-insert("Hello World","Beautiful",6);//Hello Beautiful World<br>
+        str-length("Hello World");//11<br>
+        str-slice("Hello World",2,5);//ello<br>
+        to-lower-case("Hello World");//hello world<br>
+        to-upper-case("Hello World");//HELLO WORLD<br>
+        unique-id();//hakdksfywe<br>
+        unquote("Hello World");//Hello World<br>
+    </div>
+    <h3 class="subtitle">Paragraph Text</h3>
+    <p class="p1">Numeric Function</p>
+    abs(15);//15<br>
+    abs(-15);//15<br>
+    ceil(15.20);//16<br>
+    floor(15.20);//15<br>
+    comparable(10px,20px);//true<br>
+    comparable(10cm, 20mm);//true<br>
+    comparable(10px, 10em);//false<br>
+    percentage(1.2);//120%<br>
+    max(1,2,3,4,6,5);//6<br>
+    min(2,1,3,4,5,6);//1<br>
+    random();//0.27947234//random number between 0 and 1<br>
+    random(10);//3//random number between between 1 and 10<br>
+    round(15.2);//15<br>
+    round(15.6);//16<br>
+    
+    <p class="p2" data-text="List Function"></p>
+    append((a b c), d);//a b c d<br>
+    append((a b c), (d), comma);//a, b, c, d<br>
+    index((a b c), b);//2<br>
+    index((a b c), f);//null<br>
+    is-bracketed([a b c]);//true<br>
+    is-bracketed(a b c);//false<br>
+    join((a, b, c),(d, e, f), comma);//a, b, c, d, e, f<br>
+    join((a, b, c),(d, e, f), $bracketed: true);//[a b c d e f]<br>
+    length(a b c);//3<br>
+    list-separator(a b c);//space<br>
+    list-separator(a, b, c);//comma<br>
+    nth((a, b, c), 3);//c<br>
+    set-nth(a b c, 2, x);//a x c<br>
+    zip(1 px 2px 3px, solid dashed dotted, red green blue);
+    //1px solid red, 2px dashed green, 3px dotted blue
+
+    <p class="p3">Map Function</p>
+    map-get(map, key);<br>
+    map-has-key(map, key)<br>
+    map-values(map);<br>
+    map-keys(map);<br>
+    map-merge(map1, map2);<br>
+    map-remove(map, keys..);<br>
+    
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+@import "test1";
+$font-sizes: ("small": 12px, "normal": 18px, "large": 24px);
+$p2: attr(data-text);
+
+.h1 {
+    @include important-text($size: 2rem, $color: green);
+}
+
+.p1 {
+    @extend .h1;
+}
+
+.p2::after {
+    content: $p2;
+    @include important-text($size: 20px, $color: orange);
+}
+
+.p3 {
+    @extend .h1;
+    font-size: map-get($map: $font-sizes, $key: "normal");
+    
+}

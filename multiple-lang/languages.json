@@ -1,0 +1,14 @@
+{
+    "english": {
+        "title": "Multiple Languages",
+        "description": "This website supports multiple languages(Myanmar, English, Chinese)."
+    },
+    "myanmar": {
+        "title": "ဘာသာစကားမျိုးစုံ",
+        "description": "ဤဝဘ်ဆိုဒ်သည် ဘာသာစကားမျိုးစုံ (မြန်မာ၊ အင်္ဂလိပ်၊ တရုတ်) ကို ပံ့ပိုးပေးသည်။"
+    },
+    "chinese": {
+        "title": "多种语言",
+        "description": "本网站支持多种语言（缅文、英文、中文）。"
+    }
+}

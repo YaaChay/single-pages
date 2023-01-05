@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default Theme</title>
+    <style>
+        @media (prefers-color-scheme: light) {
+            body {
+                background-color: #f5f5f5;
+                color: #222;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #222;
+                color: #fff;
+            }
+        }
+    </style>
+</head>
+<!--In JS -->
+<!--    
+    let dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    console.log(matched);
+ -->
+
+<body>
+    <p>Hello</p>
+</body>
+
+</html>

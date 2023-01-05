@@ -1,0 +1,45 @@
+$green: rgb(0, 255, 0);
+
+h1 {
+    color: black;
+}
+
+div {
+    .subtitle {
+        color: yellow;
+    }
+
+    .subtitle1 {
+        color: pink;
+    }
+
+    .subtitle2 {
+        color: red;
+    }
+
+    .subtitle3 {
+        color: blue;
+    }
+}
+
+.subtitle {
+    color: $green;
+    font: {
+        family: Helvetica, sans-serif;
+        size: 18px;
+        weight: bold;
+    }
+    text: {
+        align: center;
+        transform: lowercase;
+        overflow: hidden;
+    }
+}
+@mixin important-text($size, $color: red) {
+    color: $color;
+
+    font: {
+        size: $size;
+        weight: bold;
+    }
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Comparesion</title>
+</head>
+
+<body>
+    <input type="datetime-local" name="" id="dateTime">
+    <button id="formatBtn">Format</button>
+    <p id="text1"></p>
+    <p id="text2"></p>
+    <p id="text3"></p>
+    <p id="text4"></p>
+    <p id="text5"></p>
+    <p id="text6"></p>
+    <p id="text6"></p>
+    <script type="text/javascript">
+        var date = document.getElementById("dateTime");
+        var formatBtn = document.getElementById("formatBtn");
+        var formattedText = document.getElementById("formattedText");
+        var time;
+        formatBtn.onclick = () => {
+            format1(date.value);
+            format2(time);
+            format3(time);
+            getCurrentDate();
+            getTime(time);
+        }
+        function format1(dateTime) {
+            var year = dateTime.substr(0, 4);
+            var month = dateTime.substr(5, 2);
+            var day = dateTime.substr(8, 2);
+            var hour = dateTime.substr(11, 2);
+            var minute = dateTime.substr(14, 2);
+
+            text1.innerText = year + month + day + hour + minute;
+            time = year + month + day + hour + minute;
+            //202208230346
+        };
+
+        function format2(dateTime) {
+            var year = dateTime.substr(0, 4);
+            var month = dateTime.substr(4, 2);
+            var day = dateTime.substr(6, 2);
+            var hour = dateTime.substr(8, 2);
+            var minute = dateTime.substr(10, 2);
+
+            text2.innerText = year + ", " + month + ", " + day + ", " + hour + ", " + minute;
+            //2022, 08, 23, 15, 52
+        };
+
+        function format3(dateTime) {
+            var year = dateTime.substr(0, 4);
+            var month = dateTime.substr(4, 2);
+            var day = dateTime.substr(6, 2);
+            var hour = dateTime.substr(8, 2);
+            var minute = dateTime.substr(10, 2);
+            var monthArr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            var monthIndex = month - 1;
+            var monthName = monthArr[monthIndex];
+            var apm = "AM";
+
+            if (hour > 12) {
+                var h = hour - 12;
+                hour = "0" + h;
+                apm = "PM";
+            }
+
+            text3.innerText = monthName + " " + day + ", " + year + " " + hour + ":" + minute + " " + apm;
+            //Aug 23, 2022 03:52 PM
+        }
+
+        function getCurrentDate() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth();
+            var day = date.getDate();
+            var hour = date.getHours();
+            var minute = date.getMinutes();
+
+            if (month < 10) {
+                month = "0" + (month + 1);
+            } else {
+                month = month + 1;
+            }
+            if (day < 10) {
+                day = "0" + day;
+            } else {
+                day = day;
+            }
+            if (minute < 10) {
+                minute = "0" + minute;
+            } else {
+                minute = minute;
+            }
+            console.log(month);
+            text4.innerText = year + '' + month + '' + day + '' + hour + '' + minute;
+            //202208230346
+        }
+
+        function getTime(dateTime) {
+            var hour = dateTime.substr(8, 2);
+            var minute = dateTime.substr(10, 2);
+            var apm = "AM";
+
+            if (hour > 12) {
+                var h = hour - 12;
+                hour = "0" + h;
+                apm = "PM";
+            }
+            text5.innerText = hour + ":" + minute + " " + apm;
+            //03:52 PM
+        }
+    </script>
+</body>
+
+</html>
